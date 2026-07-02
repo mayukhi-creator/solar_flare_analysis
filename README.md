@@ -1,2 +1,4 @@
 # solar_flare_analysis
-This shows how the proton speed varied with time from 04.08.17-08.08.17 during solar flare
+Report on Solar flare happened in September 2017:
+1) How number of protons varied with time
+2) How velocity of protons varied with time
