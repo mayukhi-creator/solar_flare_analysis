@@ -1,0 +1,20 @@
+import numpy as np
+data = np.genfromtxt('Satellite-Data/04.09-08.09 proton flux 2017.txt', skip_header=28,usecols=(3,4),dtype=str,invalid_raise=False)
+doy = data[:, 0]
+measured_flux = data[:, 1].astype(float)
+n_minutes = len(measured_flux)
+
+monte_carlo_flux = np.random.normal(
+loc = measured_flux[:, np.newaxis],
+scale = 0.10 * measured_flux[:, np.newaxis],
+size = (n_minutes, 1000)
+)
+import matplotlib.pyplot as plt
+plt.figure(figsize=(10, 6))
+plt.plot(doy, measured_flux, color='blue', label='Measured Flux')
+plt.xlabel('time_axis')
+plt.ylabel('Velocity of Proton(km/s)')
+plt.title('solar proton flux data 2017.txt')
+plt.grid(True)
+plt.legend()
+plt.show()
