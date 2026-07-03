@@ -7,7 +7,7 @@ n_minutes = len(measured_flux)
 monte_carlo_flux = np.random.normal(
 loc = measured_flux[:, np.newaxis],
 scale = 0.10 * measured_flux[:, np.newaxis],
-size = (n_minutes, 1000)
+size = (n_minutes, 1000)\\there are n_minutes  count of rows and per row there's 1000 columns\\
 )
 import matplotlib.pyplot as plt
 plt.figure(figsize=(10, 6))
