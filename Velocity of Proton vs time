@@ -1,7 +1,7 @@
 import numpy as np
 data = np.genfromtxt('Satellite-Data/04.09-08.09 proton flux 2017.txt', skip_header=28,usecols=(3,4),dtype=str,invalid_raise=False)
 doy = data[:, 0]
-measured_flux = data[:, 1].astype(float)
+measured_flux = data[:, 1].astype(float)\\take all the things from that array and covert it to be real floating type numbers\\
 n_minutes = len(measured_flux)
 
 monte_carlo_flux = np.random.normal(
